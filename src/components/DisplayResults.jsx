@@ -1,4 +1,3 @@
-import "../CSS/DisplayResults.css";
 import MovieCard from "./MovieCard";
 import { v4 as uuidv4 } from "uuid";
 import Row from "react-bootstrap/Row";

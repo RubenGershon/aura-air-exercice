@@ -12,10 +12,10 @@ function App() {
   const [err, setErr] = useState("");
 
   return (
-    <div className="App d-flex flex-column justify-content-start align-items-start py-3">
+    <div className="App py-3">
       <SearchBar setSearchResults={setSearchResults} setSearchErr={setErr} />
       {err ? (
-        <Alert key="danger" variant="danger" style={{ marginLeft: "25%" }}>
+        <Alert key="danger" variant="danger" style={{width: "50%", marginLeft: "25%" }}>
           {err}
         </Alert>
       ) : (

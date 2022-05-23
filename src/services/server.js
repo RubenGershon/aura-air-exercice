@@ -29,7 +29,6 @@ async function searchByImdb(id) {
         i: id,
       },
     });
-    console.log(response);
     if (response.statusText === "OK") {
       return { status: "ok", data: response.data };
     } else return { status: "error", message: response };

@@ -2,9 +2,6 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 function MovieModal({ movieData, show, onHide }) {
-  function displayer(data) {
-    const toDisplay = data.split(",");
-  }
   return (
     <Modal
       show={show}

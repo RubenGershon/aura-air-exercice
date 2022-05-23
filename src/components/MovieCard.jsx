@@ -14,7 +14,7 @@ function MovieCard({ movieData, setMovieModal, setModalShow }) {
       border="primary"
       style={{
         width: "90%",
-        height: "60vh",
+        height: "65vh",
         boxShadow: "10px 10px 5px lightblue",
       }}
       className="MovieCard my-3"

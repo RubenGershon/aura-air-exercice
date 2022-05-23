@@ -1,4 +1,3 @@
-import "../CSS/SearchBar.css";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
@@ -11,22 +10,30 @@ function SearchBar({ setSearchResults, setSearchErr }) {
   const [isSearching, setIsSearching] = useState(false);
 
   async function handleSearch() {
+    if (!userInput) {
+      setSearchErr("Please input a movie title");
+      return;
+    }
     setSearchErr("");
     setIsSearching(true);
 
     const response = await searchByName(userInput);
+    setIsSearching(false);
     if (response.status === "ok") {
-      setIsSearching(false);
       setSearchResults(response.data);
-    } else setSearchErr("an error occured");
+    } else {
+      setSearchErr("an error occured");
+      setSearchResults({});
+    }
   }
   return (
     <InputGroup
-      className="SearchBar mb-3 "
+      size="lg"
+      className="mb-5"
       style={{ width: "50%", marginLeft: "25%" }}
     >
       <FormControl
-        placeholder="Search a movie..."
+        placeholder="Search for a movie..."
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
       />
@@ -47,6 +54,16 @@ function SearchBar({ setSearchResults, setSearchErr }) {
         ) : (
           "Search"
         )}
+      </Button>
+      <Button
+        variant="outline-success"
+        id="button-addon2"
+        onClick={() => {
+          setSearchResults({});
+          setSearchErr("");
+        }}
+      >
+        Clear
       </Button>
     </InputGroup>
   );
