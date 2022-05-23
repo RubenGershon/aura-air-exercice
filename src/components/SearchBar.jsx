@@ -22,7 +22,7 @@ function SearchBar({ setSearchResults, setSearchErr }) {
     if (response.status === "ok") {
       setSearchResults(response.data);
     } else {
-      setSearchErr("an error occured");
+      setSearchErr(response.message);
       setSearchResults({});
     }
   }
@@ -57,10 +57,10 @@ function SearchBar({ setSearchResults, setSearchErr }) {
       </Button>
       <Button
         variant="outline-success"
-        id="button-addon2"
         onClick={() => {
           setSearchResults({});
           setSearchErr("");
+          setUserInput("");
         }}
       >
         Clear

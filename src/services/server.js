@@ -11,13 +11,14 @@ async function searchByName(name) {
         s: name,
       },
     });
+    console.log(response);
     if (response.statusText === "OK") {
       if (response.data.Response === "True")
         return { status: "ok", data: response.data };
       else return { status: "error", message: response.data.Error };
     } else return { status: "error", message: response };
   } catch (error) {
-    return { status: "error", message: error };
+    return { status: "error", message: "Server connection error" };
   }
 }
 
