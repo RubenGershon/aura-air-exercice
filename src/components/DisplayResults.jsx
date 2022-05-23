@@ -1,14 +1,21 @@
-import Container from "react-bootstrap/Container";
+import "../CSS/DisplayResults.css";
+import MovieCard from "./MovieCard";
+import { v4 as uuidv4 } from "uuid";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
-function DisplayResults() {
+function DisplayResults({ searchResults, setMovieModal, setModalShow }) {
   return (
     <Container className="DisplayResults" fluid>
       <Row>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((n, i) => (
-          <Col md={3} key={i}>
-            {n}
+        {searchResults.map((movie) => (
+          <Col md={3} key={uuidv4()}>
+            <MovieCard
+              movieData={movie}
+              setMovieModal={setMovieModal}
+              setModalShow={setModalShow}
+            />
           </Col>
         ))}
       </Row>
