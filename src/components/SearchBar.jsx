@@ -5,7 +5,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { searchByName } from "../services/server.js";
 import FormControl from "react-bootstrap/FormControl";
 
-function SearchBar({ setSearchResults, setSearchErr }) {
+function SearchBar({ setSearchResults, setSearchErr, setMovieModal }) {
   const [userInput, setUserInput] = useState("");
   const [isSearching, setIsSearching] = useState(false);
 
@@ -61,6 +61,7 @@ function SearchBar({ setSearchResults, setSearchErr }) {
           setSearchResults({});
           setSearchErr("");
           setUserInput("");
+          setMovieModal({});
         }}
       >
         Clear

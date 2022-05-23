@@ -13,9 +13,17 @@ function App() {
 
   return (
     <div className="App py-3">
-      <SearchBar setSearchResults={setSearchResults} setSearchErr={setErr} />
+      <SearchBar
+        setSearchResults={setSearchResults}
+        setSearchErr={setErr}
+        setMovieModal={setMovieModal}
+      />
       {err ? (
-        <Alert key="danger" variant="danger" style={{width: "50%", marginLeft: "25%" }}>
+        <Alert
+          key="danger"
+          variant="danger"
+          style={{ width: "50%", marginLeft: "25%" }}
+        >
           {err}
         </Alert>
       ) : (

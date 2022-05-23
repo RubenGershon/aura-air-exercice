@@ -9,7 +9,6 @@ function MovieModal({ movieData, show, onHide }) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      {console.log(movieData)}
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
           {movieData.Title}

@@ -11,7 +11,6 @@ async function searchByName(name) {
         s: name,
       },
     });
-    console.log(response);
     if (response.statusText === "OK") {
       if (response.data.Response === "True")
         return { status: "ok", data: response.data };
