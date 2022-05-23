@@ -27,7 +27,7 @@ function MovieModal({ movieData, show, onHide }) {
         <p>{movieData.Awards}</p>
         <h4>Ratings</h4>
         <p>
-          Metascore : {movieData.Metascore} | ImdbId : {movieData.imdbID}
+          Metascore : {movieData.Metascore} | Imdb : {movieData.imdbRating}
         </p>
       </Modal.Body>
       <Modal.Footer>
